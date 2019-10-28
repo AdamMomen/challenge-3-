@@ -14,34 +14,66 @@
 function employee(name, salary) {
     return {
         name: name,
-        salary: salary
+        salary: salary,
+        sayName: sayMyName,
+        sayHello: helloPerson,
+        increaseSalary: salaryIncrease,
+        addFriend: friendAdd,
+        freindsCounter: 0,
+        listFriends: friendsLister,
     }
 }
 
+//function that return name of employee
+var sayMyName = function () {
+        return this.name;
+} 
+
+//function that greets the employee name;
+var helloPerson = function () {
+    return 'hello ' + this.name;
+} 
+
+// adding value to the salary
+var salaryIncrease = function (addedValueToSalary) {
+    this.salary += addedValueToSalary;
+    return 'your salary is ' + this.salary  + '$';   
+}
+
+//function that set emplyees to freinds and kkep track how many freinds added with Friendlist;
+var friendAdd = function (employee) {
+    this.freindsCounter += 1;
+    return 'you just became friend with ' + employee.name;
+}
+
+//function that shows the number of friends of the employee.
+var friendsLister = function () {
+   return 'you have '+ freindsCounter + ' friends';
+}
 var employeeA = employee("jack", 100);
 var employeeB = employee("Mark", 200);
 var employeeC = employee("Sara", 150);
 
 
-//create a function when invoked returns the name of that employee.
+//create a function when invoked returns the name of that employee. (DONE)
 
 // employeeA.sayMyName(); // "jack"
 // employeeB.sayMyName(); // "Mark"
 
 
-//now modify that closure and add a function that says hello to the employee name;
+//now modify that closure and add a function that says hello to the employee name;  (Done)
 
 // employeeA.sayHello(); // hello jack
 // employeeB.sayHello(); // hello Mark
 
 //modify your closure and add function increaseSalary that increases the salary for the employee by n value and return it.
-//employeeA.increaseSalary(50); // "your salary is 150$"
+//employeeA.increaseSalary(50); // "your salary is 150$"        (DONE)
 
 //how about we let jack and mark meet togther!
 //modify your closure and add function addFriend that accepts an object as a parameter, and let jack meets his friends.
 
 // employeeA.addFriend(employeeB); // "you just became friend with Mark"
-// employeeA.addFriend(employeeC); // "you just became friend with Mark and Sara"
+// employeeA.addFriend(employeeC); // "you just became friend with Mark and Sara"   (DONE)
 
 //modify your closure to tell mark how many friends does he have.
 
@@ -69,7 +101,13 @@ var employeeC = employee("Sara", 150);
 
 
 // Write your code here .....
+// comment here
+ var pet1 = pet("doggy");
 
+function pet(argument) {
+    var  petObj= {};
+    
+}
 
 // Now, to make sure that you are actually reading, make a comment below this and type: Yes I am
 
